@@ -17,25 +17,42 @@ import com.bekici.springboot.model.Employee;
 import com.bekici.springboot.service.IEmployeeService;
 
 @RestController
-@RequestMapping("/api/employees")
 public class EmployeeController {
 	private IEmployeeService employeeService;
-
+	
 	public EmployeeController(IEmployeeService employeeService) 
 	{
 		this.employeeService = employeeService;
 	}
 	
 	// ---------------------------------------------------- POST OPERATIONS ----------------------------------------------------
-	
-	@PostMapping("/post/save-employee")
+	/*
+	@PostMapping("/admin/post/save-employee")
 	public ResponseEntity<Employee> saveEmployee(@RequestBody Employee employee)
 	{	
 		return new ResponseEntity<Employee>(employeeService.saveEmployee(employee), HttpStatus.CREATED);
 	}
-	
+	*/
 	// ---------------------------------------------------- GET OPERATIONS ---------------------------------------------------- 
+	@GetMapping("/")
+	public String home()
+	{
+		return "<h1>Welcome!..</h1>";
+	}
 	
+	@GetMapping("/admin")
+	public String admin()
+	{
+		return "<h1>Welcome ADMIN!..</h1>";
+	}
+	
+	@GetMapping("/user")
+	public String user()
+	{
+		return "<h1>Welcome USER!..</h1>";
+	}
+	
+	/*
 	@GetMapping("/get/all-employees")
 	public List<Employee> getAllEmployees()
 	{
@@ -115,4 +132,5 @@ public class EmployeeController {
 		
 		return new ResponseEntity<String>("According to the mail, Employee successfully deleted.", HttpStatus.OK);
 	}
+	*/
 }
