@@ -26,15 +26,15 @@ public class EmployeeController {
 	}
 	
 	// ---------------------------------------------------- POST OPERATIONS ----------------------------------------------------
-	/*
-	@PostMapping("/admin/post/save-employee")
+	
+	@PostMapping("/admin/save-employee")
 	public ResponseEntity<Employee> saveEmployee(@RequestBody Employee employee)
 	{	
 		return new ResponseEntity<Employee>(employeeService.saveEmployee(employee), HttpStatus.CREATED);
 	}
-	*/
+	
 	// ---------------------------------------------------- GET OPERATIONS ---------------------------------------------------- 
-	@GetMapping("/")
+	@GetMapping("/home")
 	public String home()
 	{
 		return "<h1>Welcome!..</h1>";
@@ -52,32 +52,32 @@ public class EmployeeController {
 		return "<h1>Welcome USER!..</h1>";
 	}
 	
-	/*
-	@GetMapping("/get/all-employees")
+	
+	@GetMapping("/admin/get/all-employees")
 	public List<Employee> getAllEmployees()
 	{
 		return employeeService.getAllEmployees();
 	}
 	
-	@GetMapping("get/{id}")
+	@GetMapping("/user/get/{id}")
 	public ResponseEntity<Employee> getEmployeeById(@PathVariable("id") long id)
 	{
 		return new ResponseEntity<Employee>(employeeService.getEmployeeById(id), HttpStatus.OK);
 	}
 	
-	@GetMapping("/get/first-name/{firstName}")
+	@GetMapping("/admin/get/first-name/{firstName}")
 	public ResponseEntity<List<Employee>> getEmployeeByFirstName(@PathVariable("firstName") String firstName)
 	{
 		return new ResponseEntity<List<Employee>>(employeeService.getEmployeeByFirstName(firstName), HttpStatus.OK);
 	}
 	
-	@GetMapping("/get/last-name/{lastName}")
+	@GetMapping("/admin/get/last-name/{lastName}")
 	public ResponseEntity<List<Employee>> getEmployeeByLastName(@PathVariable("lastName") String lastName)
 	{
 		return new ResponseEntity<List<Employee>>(employeeService.getEmployeeByLastName(lastName), HttpStatus.OK);
 	}
 	
-	@GetMapping("/get/email/{email}")
+	@GetMapping("/user/get/email/{email}")
 	public ResponseEntity<Employee> getEmployeeByEmail(@PathVariable("email") String email)
 	{
 		return new ResponseEntity<Employee>(employeeService.getEmployeeByEmail(email), HttpStatus.OK);
@@ -85,14 +85,14 @@ public class EmployeeController {
 	
 	// ---------------------------------------------------- PUT OPERATIONS ---------------------------------------------------- 
 	
-	@PutMapping("/update/id/{id}")
+	@PutMapping("/admin/update/id/{id}")
 	public ResponseEntity<Employee> updateEmployeeById(@PathVariable("id") long id,
 												   @RequestBody Employee employee)
 	{
 		return new ResponseEntity<Employee>(employeeService.updateEmployeeById(employee, id), HttpStatus.OK);
 	}
 	
-	@PutMapping("/update/email/{email}")
+	@PutMapping("/admin/update/email/{email}")
 	public ResponseEntity<Employee> updateEmployeeByEmail(@PathVariable("email") String email,
 												   @RequestBody Employee employee)
 	{
@@ -101,7 +101,7 @@ public class EmployeeController {
 	
 	// ---------------------------------------------------- DELETE OPERATIONS ---------------------------------------------------- 
 	
-	@DeleteMapping("/delete/id/{id}")
+	@DeleteMapping("/admin/delete/id/{id}")
 	public ResponseEntity<String> deleteEmployeeById(@PathVariable("id") long id)
 	{
 		employeeService.deleteEmployeeById(id);
@@ -109,7 +109,7 @@ public class EmployeeController {
 		return new ResponseEntity<String>("According to the id, Employee successfully deleted.", HttpStatus.OK);
 	}
 	
-	@DeleteMapping("/delete/first-name/{firstName}")
+	@DeleteMapping("/admin/delete/first-name/{firstName}")
 	public ResponseEntity<String> deleteEmployeeByFirstName(@PathVariable("firstName") String firstName)
 	{
 		employeeService.deleteEmployeeByFirstName(firstName);
@@ -117,7 +117,7 @@ public class EmployeeController {
 		return new ResponseEntity<String>("According to the first name, Employee successfully deleted.", HttpStatus.OK);
 	}
 	
-	@DeleteMapping("/delete/last-name/{lastName}")
+	@DeleteMapping("/admin/delete/last-name/{lastName}")
 	public ResponseEntity<String> deleteEmployeeByLastName(@PathVariable("lastName") String lastName)
 	{
 		employeeService.deleteEmployeeByLastName(lastName);
@@ -125,12 +125,11 @@ public class EmployeeController {
 		return new ResponseEntity<String>("According to the last name, Employee successfully deleted.", HttpStatus.OK);
 	}
 	
-	@DeleteMapping("/delete/email/{email}")
+	@DeleteMapping("/admin/delete/email/{email}")
 	public ResponseEntity<String> deleteEmployeeByEmail(@PathVariable("email") String email)
 	{
 		employeeService.deleteEmployeeByMail(email);
 		
 		return new ResponseEntity<String>("According to the mail, Employee successfully deleted.", HttpStatus.OK);
 	}
-	*/
 }
