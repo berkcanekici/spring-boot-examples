@@ -34,7 +34,7 @@ public class EmployeeController {
 	}
 	
 	// ---------------------------------------------------- GET OPERATIONS ---------------------------------------------------- 
-	@GetMapping("/home")
+	@GetMapping("/")
 	public String home()
 	{
 		return "<h1>Welcome!..</h1>";
