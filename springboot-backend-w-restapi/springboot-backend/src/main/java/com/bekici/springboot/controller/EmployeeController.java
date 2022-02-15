@@ -17,12 +17,12 @@ import com.bekici.springboot.model.Employee;
 import com.bekici.springboot.service.IEmployeeService;
 
 @RestController
-@RequestMapping("/api")
+//@RequestMapping("/api")
 public class EmployeeController {
 	private IEmployeeService employeeService;
 	
 	public EmployeeController(IEmployeeService employeeService) 
-	{
+	{ 	
 		this.employeeService = employeeService;
 	}
 	
