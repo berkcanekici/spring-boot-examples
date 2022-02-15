@@ -33,24 +33,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.and()
 				.withUser("yusuf")
 				.password("7644")
-				.roles("USER", "ADMIN");
+				.roles("ADMIN", "USER");
 		
 	}
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception 
-	{
-		http.csrf().disable();
-		/*
-		http.authorizeRequests()
-				.antMatchers("/admin/**").hasRole("ADMIN")
-				.antMatchers("/user/**").hasAnyRole("USER", "ADMIN")
-				.antMatchers("/").permitAll()
-				.anyRequest().authenticated()
-				.and()
-				.httpBasic();
-		*/
-		/*
+	{	
 		http.authorizeRequests()
 			.antMatchers("/admin/**").hasRole("ADMIN")
 			.antMatchers("/user/**").hasRole("USER")
@@ -62,8 +51,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	        .exceptionHandling().accessDeniedPage("/403")
 	        .and()
 			.formLogin();
-		*/
-		
 	}
 
 	@SuppressWarnings("deprecation")
