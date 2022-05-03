@@ -79,6 +79,4 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
         new ObjectMapper().writeValue(response.getOutputStream(), tokens);
     }
 
-    // 1.27'de kaldik.
-    // https://www.youtube.com/watch?v=VVn9OG9nfH0&t=2931s
 }
